@@ -1,13 +1,16 @@
 package com.evable.cashandmitra
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.regex.Pattern
@@ -33,7 +36,9 @@ class ChangePassword : AppCompatActivity() {
 
 
 
-        btn_Pass.addTextChangedListener(object : TextWatcher {
+
+
+            btn_Pass.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -100,16 +105,18 @@ class ChangePassword : AppCompatActivity() {
             btn_CPass.setError("Please Enter Confirm Password")
             return false
         } else if (btn_Password.length <= 7) {
-            Toast.makeText(this, "Too short", Toast.LENGTH_SHORT).show();
+             btn_CPass.setError("Please Too Short")
             return false
         } else if (!isValidPasswordFormat(btn_Password)) {
             btn_Pass.setError("Password Not Correct format")
             return false
-        } else if (btn_Password != btn_ConfirmPass) {
-            btn_Pass.setError("Password Mismatched")
-            return false
+        }
+         else if (btn_ConfirmPass != btn_Password) {
+             btn_Pass.setError("Password Mismatched")
+             btn_Pass.requestFocus()
+             return false
 
-        } else {
+         } else {
             return true
         }
     }

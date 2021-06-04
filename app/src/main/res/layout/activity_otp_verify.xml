@@ -92,15 +92,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="12dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
             app:cardBackgroundColor="@color/white"
             app:cardMaxElevation="14dp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             android:layout_weight="1"
-            prefix:cardCornerRadius="19dp"
-            android:layout_marginBottom="20dp">
+            prefix:cardCornerRadius="19dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="OTP"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:textColor="@color/black"

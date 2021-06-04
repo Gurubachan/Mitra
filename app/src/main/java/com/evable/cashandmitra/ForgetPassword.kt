@@ -26,7 +26,7 @@ class ForgetPassword : AppCompatActivity() {
         //getting user input
             var yourPhone = phoneNumber.text.toString().trim()
 
-            reqPassword.isEnabled = false
+            //reqPassword.isEnabled = false
 
 
         phoneNumber.addTextChangedListener(object : TextWatcher {
@@ -35,18 +35,20 @@ class ForgetPassword : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                reqPassword.isEnabled = mobileValidate(phoneNumber.text.toString())
+               // reqPassword.isEnabled = mobileValidate(phoneNumber.text.toString())
             }
 
             override fun afterTextChanged(s: Editable?) {
+
 
 
             }
         })
 
         reqPassword.setOnClickListener {
-            if (mobileValidate(phoneNumber.text.toString())) {
-                //progress bar
+            if (mobileValidate(phoneNumber.text.toString()))
+            {
+//                //progress bar
                 val CDT: CountDownTimer
                 var i = 5
                 val progressDialog = ProgressDialog(this)
@@ -64,10 +66,15 @@ class ForgetPassword : AppCompatActivity() {
                         //Your Code ...
                     }
                 }.start()
+                //end Progress bar
+
                 intent = Intent(this, OtpVerify::class.java)
                 startActivity(intent)
-            }else {
-                phoneNumber.error = "Invalid Mobile"
+            }
+            else
+            {
+                phoneNumber.error = "Enter a valid Mobile"
+
             }
 
         }
