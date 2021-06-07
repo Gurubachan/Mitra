@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Mitra</string>
+    <string name="hint_first_name">Enter your first name</string>
+    <string name="hint_last_name">Enter your last name</string>
+    <string name="hint_phone">Enter your phone number</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Enter password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="hint_empty">This field cannot be blank</string>
+    <string name ="error_email">Please enter a valid email</string>
 </resources>
